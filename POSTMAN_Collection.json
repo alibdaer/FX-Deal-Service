@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "229270c5-69ea-4e17-87c3-c0ec0b478898",
+		"name": "FX Deals - Ali Bdaer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51056312",
+		"_collection_link": "https://alibdaer96-912999.postman.co/workspace/Ali-Bdaer's-Workspace~e839163a-50a9-4442-8ff4-d29bf20ea538/collection/51056312-229270c5-69ea-4e17-87c3-c0ec0b478898?action=share&source=collection_link&creator=51056312"
+	},
+	"item": [
+		{
+			"name": "Valid Deal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-001\",\r\n  \"fromCurrency\": \"USD\",\r\n  \"toCurrency\": \"EUR\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 1000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing - dealId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fromCurrency\": \"USD\",\r\n  \"toCurrency\": \"EUR\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 1500.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing - fromCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-002\",\r\n  \"toCurrency\": \"EUR\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 2000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing - toCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-003\",\r\n  \"fromCurrency\": \"GBP\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 2500.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing - timestamp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-004\",\r\n  \"fromCurrency\": \"AUD\",\r\n  \"toCurrency\": \"CAD\",\r\n  \"amount\": 3000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing - amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-005\",\r\n  \"fromCurrency\": \"CHF\",\r\n  \"toCurrency\": \"JPY\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid amount Type (String)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-006\",\r\n  \"fromCurrency\": \"NZD\",\r\n  \"toCurrency\": \"SGD\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": \"thousand\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid timestamp Format",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-007\",\r\n  \"fromCurrency\": \"ZAR\",\r\n  \"toCurrency\": \"NOK\",\r\n  \"timestamp\": \"01-01-2025 10:00:00\",\r\n  \"amount\": 4000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Duplicate Deal (D-001)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-001\",\r\n  \"fromCurrency\": \"USD\",\r\n  \"toCurrency\": \"EUR\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 1000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empty dealId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"\",\r\n  \"fromCurrency\": \"MXN\",\r\n  \"toCurrency\": \"CZK\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 5000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empty fromCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-008\",\r\n  \"fromCurrency\": \"\",\r\n  \"toCurrency\": \"TRY\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 6000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empty toCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-009\",\r\n  \"fromCurrency\": \"SEK\",\r\n  \"toCurrency\": \"\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 7000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zero amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-010\",\r\n  \"fromCurrency\": \"HKD\",\r\n  \"toCurrency\": \"THB\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 0.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-011\",\r\n  \"fromCurrency\": \"RUB\",\r\n  \"toCurrency\": \"INR\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": -500.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Large amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-012\",\r\n  \"fromCurrency\": \"BRL\",\r\n  \"toCurrency\": \"KRW\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": 999999999999.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Deal with Different Currencies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-013\",\r\n  \"fromCurrency\": \"AED\",\r\n  \"toCurrency\": \"PLN\",\r\n  \"timestamp\": \"2025-02-15T14:30:00\",\r\n  \"amount\": 1234.56\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Deal with Future Timestamp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-014\",\r\n  \"fromCurrency\": \"ILS\",\r\n  \"toCurrency\": \"CLP\",\r\n  \"timestamp\": \"2026-12-31T23:59:59\",\r\n  \"amount\": 8888.88\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Deal with Past Timestamp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-015\",\r\n  \"fromCurrency\": \"SAR\",\r\n  \"toCurrency\": \"QAR\",\r\n  \"timestamp\": \"2020-01-01T00:00:00\",\r\n  \"amount\": 999.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Deal but with Null Fields (Invalid Structure)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-016\",\r\n  \"fromCurrency\": \"CNY\",\r\n  \"toCurrency\": \"MYR\",\r\n  \"timestamp\": null,\r\n  \"amount\": 1111.11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Deal with Null Amount (Invalid Structure)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dealId\": \"D-017\",\r\n  \"fromCurrency\": \"DKK\",\r\n  \"toCurrency\": \"HUF\",\r\n  \"timestamp\": \"2025-01-01T10:00:00\",\r\n  \"amount\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
